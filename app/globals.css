@@ -1,27 +1,245 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* .container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.coin {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  position: relative;
+  transition: all ease-in-out 0.2s;
+}
+
+@keyframes flipMe1 {
+  0% {
+    transform: rotateX(0deg);
+    z-index: 0;
+  }
+
+  50% {
+    transform: rotateX(180deg);
+    z-index: 1;
+  }
+
+  100% {
+    transform: rotateX(360deg);
+    z-index: 0;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@keyframes flipMe2 {
+  0% {
+    transform: rotateX(0deg);
+    z-index: 1;
+  }
+
+  50% {
+    transform: rotateX(180deg);
+    z-index: 0;
+  }
+
+  100% {
+    transform: rotateX(360deg);
+    z-index: 1;
+  }
+}
+
+
+.coin__heads {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  font-size: xx-large;
+  background-color: green;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.coin__tails {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  font-size: xx-large;
+  background-color: red;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.animet_1 {
+  animation: flipMe1 0.3s ease-in-out infinite;
+
+}
+
+.animet_2 {
+  animation: flipMe2 0.3s ease-in-out infinite;
+}
+
+
+
+@keyframes toss {
+  0% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-200px)
+  }
+
+  45% {
+    transform: translateY(-210px)
+  }
+
+  60% {
+    transform: translateY(-200px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.toss_coin {
+  animation: toss 2.2s ease-in-out infinite;
+} */
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.coin {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  position: relative;
+  transition: all ease-in-out 0.2s;
+}
+
+@keyframes flipMe1 {
+  0% {
+    transform: rotateX(0deg);
+    z-index: 0;
+  }
+
+  50% {
+    transform: rotateX(180deg);
+    z-index: 1;
+  }
+
+  100% {
+    transform: rotateX(360deg);
+    z-index: 0;
+  }
+}
+
+@keyframes flipMe2 {
+  0% {
+    transform: rotateX(0deg);
+    z-index: 1;
+  }
+
+  50% {
+    transform: rotateX(180deg);
+    z-index: 0;
+  }
+
+  100% {
+    transform: rotateX(360deg);
+    z-index: 1;
+  }
+}
+
+
+.coin__heads {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  font-size: xx-large;
+  background-color: green;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.coin__tails {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  font-size: xx-large;
+  background-color: red;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.show {
+  display: block;
+  /* transform: rotateX(85deg); */
+}
+
+.hide {
+  display: none;
+}
+
+.animet_1 {
+  animation: flipMe1 0.3s ease-in-out infinite;
+
+}
+
+.animet_2 {
+  animation: flipMe2 0.3s ease-in-out infinite;
+}
+
+
+
+@keyframes toss {
+  0% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-200px)
+  }
+
+  45% {
+    transform: translateY(-210px)
+  }
+
+  60% {
+    transform: translateY(-200px);
+  }
+
+  90% {
+    transform: translateY(0);
+
+  }
+
+  100% {
+    transform:
+      perspective(900px) rotateX(60deg) scale(0.7);
+    /* box-shadow: 0px 20px 100px #555; */
+    transition: 0.5s ease all;
+  }
+}
+
+.toss_coin {
+  animation: toss 2.2s ease-in-out infinite;
 }
